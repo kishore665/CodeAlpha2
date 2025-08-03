@@ -1,12 +1,3 @@
-'''
-
-                            Online Python Compiler.
-                Code, Compile, Run and Debug python program online.
-Write your code in this editor and press "Run" button to execute it.
-
-'''
-
-# Hardcoded stock prices
 stock_prices = {
     "AAPL": 180,
     "TSLA": 250,
@@ -22,7 +13,7 @@ print("📈 Welcome to the Stock Portfolio Tracker")
 print("Available stocks:", ', '.join(stock_prices.keys()))
 print("Type 'done' when finished.\n")
 
-# User input loop
+
 while True:
     stock = input("Enter stock symbol (e.g., AAPL): ").upper()
     if stock == "DONE":
@@ -37,7 +28,7 @@ while True:
         continue
     portfolio[stock] = portfolio.get(stock, 0) + quantity
 
-# Calculate total investment
+
 print("\n💼 Portfolio Summary:")
 for stock, quantity in portfolio.items():
     price = stock_prices[stock]
@@ -47,7 +38,7 @@ for stock, quantity in portfolio.items():
 
 print(f"\n🔢 Total Investment Value: ${total_value}")
 
-# Save to file (optional)
+
 save = input("Do you want to save this to a file? (yes/no): ").lower()
 if save == 'yes':
     filename = input("Enter filename (e.g., portfolio.txt or portfolio.csv): ")
