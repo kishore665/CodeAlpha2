@@ -1,29 +1,15 @@
-'''
-
-                            Online Python Compiler.
-                Code, Compile, Run and Debug python program online.
-Write your code in this editor and press "Run" button to execute it.
-
-'''
-
 import random
-
-# Predefined list of words
 word_list = ['apple', 'robot', 'candy', 'pizza', 'chair']
 secret_word = random.choice(word_list)
-
-# Game variables
 guessed_letters = []
 wrong_guesses = 0
 max_wrong_guesses = 6
-
-# Display setup
 display_word = ['_'] * len(secret_word)
 
 print("🎮 Welcome to Hangman!")
 print("Guess the word, one letter at a time.")
 
-# Game loop
+
 while wrong_guesses < max_wrong_guesses and '_' in display_word:
     print("\nWord: " + ' '.join(display_word))
     print(f"Wrong guesses left: {max_wrong_guesses - wrong_guesses}")
