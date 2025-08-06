@@ -1,2 +1,2 @@
 # CodeAlpha2
-this project contains hangman game and stock portfolio tracker built with java.
+this project contains hangman game stock portfolio tracker and chatbot built with java.
