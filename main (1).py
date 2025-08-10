@@ -1,43 +1,16 @@
-import random
-word_list = ['apple', 'robot', 'candy', 'pizza', 'chair']
-secret_word = random.choice(word_list)
-guessed_letters = []
-wrong_guesses = 0
-max_wrong_guesses = 6
-display_word = ['_'] * len(secret_word)
-
-print("🎮 Welcome to Hangman!")
-print("Guess the word, one letter at a time.")
-
-
-while wrong_guesses < max_wrong_guesses and '_' in display_word:
-    print("\nWord: " + ' '.join(display_word))
-    print(f"Wrong guesses left: {max_wrong_guesses - wrong_guesses}")
-    print("Guessed letters:", ' '.join(guessed_letters))
-
-    guess = input("Enter a letter: ").lower()
-
-    if not guess.isalpha() or len(guess) != 1:
-        print("❌ Please enter a single valid letter.")
-        continue
-
-    if guess in guessed_letters:
-        print("🔁 You already guessed that letter.")
-        continue
-
-    guessed_letters.append(guess)
-
-    if guess in secret_word:
-        print("✅ Good guess!")
-        for index, letter in enumerate(secret_word):
-            if letter == guess:
-                display_word[index] = guess
-    else:
-        print("❌ Wrong guess.")
-        wrong_guesses += 1
-
-# Game result
-if '_' not in display_word:
-    print("\n🎉 Congratulations! You guessed the word:", secret_word)
-else:
-    print("\n💀 Game Over! The word was:", secret_word)
+def chatbot():
+    print("Chatbot: Hi! I'm your friendly chatbot. Type 'bye' to exit.")
+    while True:
+        user_input = input("You: ").lower()
+        
+        if user_input == "hello":
+            print("Chatbot: Hi!")
+        elif user_input == "how are you":
+            print("Chatbot: I'm fine, thanks!")
+        elif user_input == "bye":
+            print("Chatbot: Goodbye!")
+            break
+        else:
+            print("Chatbot: Sorry, I don't understand that.")
+            
+chatbot()
